@@ -14,13 +14,12 @@ import saleItemImg from "../../img/banner-img.png";
 //
 //components
 import Slider from "react-slick";
-import ArrowPrev from "./ArrowPrev";
-import ArrowNext from "./ArrowNext";
-
+import ArrowPrev from "../ArowsSlider/ArrowPrev";
+import ArrowNext from "../ArowsSlider/ArrowNext";
 //
 
 function Banner() {
-  let sliderItems = [
+  const sliderItems = [
     sliderImg,
     sliderImg,
     sliderImg,
@@ -29,10 +28,20 @@ function Banner() {
     sliderImg,
   ];
 
-  let settings = {
+  const settings = {
     dots: true,
-    prevArrow: <ArrowPrev />,
-    nextArrow: <ArrowNext />,
+    prevArrow: (
+      <ArrowPrev
+        color="white"
+        classArrow="banner-section__slider-btn banner-section__slider-btnPrev"
+      />
+    ),
+    nextArrow: (
+      <ArrowNext
+        color="white"
+        classArrow="banner-section__slider-btn banner-section__slider-btnNext"
+      />
+    ),
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -47,7 +56,12 @@ function Banner() {
               {sliderItems.map((item, index) => {
                 return (
                   <div key={index} className="banner-section__slider-item">
-                    <img className="banner-section__slider-img" key={index} src={item} alt="slider-item" />
+                    <img
+                      className="banner-section__slider-img"
+                      key={index}
+                      src={item}
+                      alt="slider-item"
+                    />
                   </div>
                 );
               })}
@@ -62,7 +76,7 @@ function Banner() {
               </div>
             </div>
             <img className="sale-item__img" src={saleItemImg} alt="sale-img" />
-            <h5 className="sale-item__title">Лодочный мотор  Suzuki DF9.9BRS</h5>
+            <h5 className="sale-item__title">Лодочный мотор Suzuki DF9.9BRS</h5>
             <div className="sale-item__footer">
               Акция действует до <span>31.08.2020</span>
             </div>

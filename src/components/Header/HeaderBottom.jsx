@@ -1,7 +1,7 @@
 import React from "react";
 
 function HeaderBottom() {
-  let menuItems = [
+  const menuItems = [
     "Квадроциклы",
     "Катера",
     "Гидроциклы",

@@ -7,7 +7,7 @@ import shop from "../../img/shop.svg";
 import heart from "../../img/heart.svg";
 //
 function HeaderTop() {
-  let items = ["Магазины", "Акции", "Доставка и оплата"];
+  const items = ["Магазины", "Акции", "Доставка и оплата"];
   return (
     <div className="header__top">
       <div className="container">
