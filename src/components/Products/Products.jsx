@@ -15,7 +15,7 @@ import ArrowPrev from "../ArowsSlider/ArrowPrev";
 import ArrowNext from "../ArowsSlider/ArrowNext";
 //
 
-function Products() {
+function Products({ title, hideButton }) {
   const [activeFavorite, setActiveFavorite] = useState(null);
   const [activeTab, setActiveTab] = useState(0);
   // const [activeProduct, setActiveProduct] = useState(0);
@@ -94,7 +94,7 @@ function Products() {
     <section className="products page-section">
       <div className="container">
         <div className="products__inner">
-          <h1 className="product__title">Популярные товары</h1>
+          <h1 className="product__title">{title}</h1>
           <div className="tabs-wrapper">
             <div className="products__tabs">
               {tabsNames.map((tab, index) => {
@@ -181,11 +181,13 @@ function Products() {
               })}
             </div>
           </div>
-          <div className="product__more">
-            <a className="product__more-link" href="/#">
-              Показать еще
-            </a>
-          </div>
+          {hideButton ? (
+            <div className="product__more">
+              <a className="product__more-link" href="/#">
+                Показать еще
+              </a>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

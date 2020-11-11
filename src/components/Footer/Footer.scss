@@ -1,0 +1,78 @@
+.footer {
+  background: #f0f0f4;
+  width: 100%;
+
+  &__top {
+    padding-top: 43px;
+    font-size: 14px;
+    &-content {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-newslatter {
+      width: 295px;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+  &__form {
+    display: flex;
+    margin-top: 34px;
+    &-input {
+      padding: 0 12px;
+      border: 0;
+      outline: none;
+      &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #c4c4c4;
+      }
+    }
+    &-button {
+      font-family: "SFProDisplay-Bold", sans-serif;
+      padding: 10px 16px;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: #1c62cd;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  &-list {
+    line-height: 22px;
+  }
+
+  &__bottom {
+    padding-top: 46px;
+    padding-bottom: 27px;
+    font-size: 12px;
+    text-align: center;
+    &-link {
+      margin-right: 80px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .social-list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    &__item {
+      margin-right: 30px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
