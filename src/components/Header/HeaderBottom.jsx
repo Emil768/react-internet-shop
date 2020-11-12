@@ -1,6 +1,7 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 function HeaderBottom() {
+  const [activeItem, setActiveItem] = useState(null);
   const menuItems = [
     "Квадроциклы",
     "Катера",
@@ -11,6 +12,11 @@ function HeaderBottom() {
     "Двигатели",
     "Запчасти",
   ];
+
+  const handlerActiveItem = (index) => {
+    setActiveItem(index);
+  };
+
   return (
     <div className="header__bottom">
       <div className="container">
@@ -18,10 +24,21 @@ function HeaderBottom() {
           <ul className="menu-categories">
             {menuItems.map((item, index) => {
               return (
-                <li key={index} className="menu-categories__item">
-                  <a className="menu-categories__link" href="/#">
+                <li
+                  onClick={() => handlerActiveItem(index)}
+                  key={index}
+                  className="menu-categories__item "
+                >
+                  <Link
+                    className={
+                      activeItem === index
+                        ? "menu-categories__link active"
+                        : "menu-categories__link"
+                    }
+                    to={`/catalog/${item}`}
+                  >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
