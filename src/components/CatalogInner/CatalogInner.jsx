@@ -1,16 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CatalogInner.scss";
 
 //img
 import jetSkiOrange from "../../img/jetSki-orange.png";
-import basketImg from "../../img/product-basket.svg";
+
 //
 
 //components
 import ProductItem from "../ProductItem/ProductItem";
 //
+
+//lib
+
+import { Checkbox, Select, Slider } from "antd";
+const { Option } = Select;
+
+//
 function CatalogInner({ name }) {
+  const [activeTab, setActiveTab] = useState(0);
+  const [checked, setChecked] = useState(false);
+  const [rangeValue, setRangeValue] = useState({ min: 10000, max: 50000 });
+  const [dropItem, setDropItem] = useState(true);
   const catalogItems = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const tabsNames = ["Параметры", "По марке"];
+
+  const handlerActiveTab = (e, index) => {
+    e.preventDefault();
+    setActiveTab(index);
+  };
+
+  const handleDropItem = () => {
+    setDropItem(!dropItem);
+  };
+  const onChangeRange = (value) => {
+    setRangeValue({
+      min: value[0],
+      max: value[1],
+    });
+  };
 
   return (
     <section className="catalog">
@@ -24,11 +51,14 @@ function CatalogInner({ name }) {
             <button>еще</button>
           </div>
           <div className="catalog__filter-sort">
-            <select name="" id="">
-              <option value="">Популярные</option>
-              <option value=""></option>
-              <option value=""></option>
-            </select>
+            <Select defaultValue="popular" style={{ width: 178 }}>
+              <Option value="jack">Jack</Option>
+              <Option value="popular">По популярности</Option>
+              <Option value="disabled" disabled>
+                Disabled
+              </Option>
+              <Option value="Yiminghe">yiminghe</Option>
+            </Select>
             <button className="catalog__filter-btngrid">
               <svg
                 width="23"
@@ -118,9 +148,273 @@ function CatalogInner({ name }) {
           </div>
         </div>
         <div className="catalog__content">
-          <div className="catalog__content-aside">
-            <h1>Aside</h1>
+          <div className="catalog__content-aside aside-filter">
+            <div className="aside-tabs__wrapper">
+              <div className="aside-filter__tabs">
+                {tabsNames.map((tab, index) => {
+                  return (
+                    <a
+                      onClick={(e) => handlerActiveTab(e, index)}
+                      className={
+                        activeTab === index
+                          ? " aside-filter__tab active"
+                          : " aside-filter__tab"
+                      }
+                      key={index}
+                      href="/#"
+                    >
+                      <span>{tab}</span>
+                    </a>
+                  );
+                })}
+              </div>
+              <div className="aside-tabs__container">
+                <div className="aside-tabs__content">
+                  <form action="" className="aside-filter__form">
+                    <ul className="aside-filter__list">
+                      <li className="aside-filter__item-drop">
+                        <p
+                          onClick={handleDropItem}
+                          className={
+                            dropItem
+                              ? "aside-filter__item-title filter__item-drop"
+                              : "aside-filter__item-title filter__item-drop active"
+                          }
+                        >
+                          Наличие
+                        </p>
+                        <div
+                          className={
+                            dropItem
+                              ? "aside-filter__item-content "
+                              : "aside-filter__item-content hide"
+                          }
+                        >
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">В наличие</label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">Под заказ</label>
+                            </Checkbox>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="aside-filter__item-drop">
+                        <p
+                          onClick={handleDropItem}
+                          className={
+                            dropItem
+                              ? "aside-filter__item-title filter__item-drop"
+                              : "aside-filter__item-title filter__item-drop active"
+                          }
+                        >
+                          Новинки
+                        </p>
+                        <div
+                          className={
+                            dropItem
+                              ? "aside-filter__item-content "
+                              : "aside-filter__item-content hide"
+                          }
+                        >
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">Все</label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">Новинки</label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">Акции</label>
+                            </Checkbox>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="aside-filter__item-drop">
+                        <p
+                          onClick={handleDropItem}
+                          className={
+                            dropItem
+                              ? "aside-filter__item-title filter__item-drop"
+                              : "aside-filter__item-title filter__item-drop active"
+                          }
+                        >
+                          Цена
+                        </p>
+                        <div
+                          className={
+                            dropItem
+                              ? "aside-filter__item-content "
+                              : "aside-filter__item-content hide"
+                          }
+                        >
+                          <Slider
+                            range
+                            defaultValue={[rangeValue.min, rangeValue.max]}
+                            min={0}
+                            max={100000}
+                            onChange={onChangeRange}
+                            railStyle={{
+                              backgroundColor: "#E0E0E0",
+                              height: "1px",
+                            }}
+                          />
+                        </div>
+                        <div className="aside-filter__item-info">
+                          <div className="aside-filter__item-info__text">
+                            от <span>{rangeValue.min}</span>
+                          </div>
+                          <div className="aside-filter__item-info__text">
+                            до <span>{rangeValue.max}</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li className="aside-filter__item-list">
+                        <div className="filter__item-list">
+                          <p className="filter__item-list__title">
+                            Мощность, л.с.
+                          </p>
+                          <Select
+                            className="filter__item-list__select"
+                            defaultValue="90"
+                            style={{ width: 68 }}
+                            bordered={false}
+                          >
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="90"
+                            >
+                              90
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="130"
+                            >
+                              130
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="154"
+                            >
+                              154
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="230"
+                            >
+                              230
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="300"
+                            >
+                              300
+                            </Option>
+                          </Select>
+                        </div>
+                      </li>
+                      <li className="aside-filter__item-list">
+                        <div className="filter__item-list">
+                          <p className="filter__item-list__title">
+                            Мощность двигателя, л.с.
+                          </p>
+                          <Select
+                            className="filter__item-list__select"
+                            defaultValue="90"
+                            style={{ width: 68 }}
+                            bordered={false}
+                          >
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="90"
+                            >
+                              90
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="130"
+                            >
+                              130
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="154"
+                            >
+                              154
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="230"
+                            >
+                              230
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="300"
+                            >
+                              300
+                            </Option>
+                          </Select>
+                        </div>
+                      </li>
+                      <li className="aside-filter__item-list">
+                        <div className="filter__item-list">
+                          <p className="filter__item-list__title">
+                            Макс. скорость
+                          </p>
+                          <Select
+                            className="filter__item-list__select"
+                            defaultValue="90"
+                            style={{ width: 68 }}
+                            bordered={false}
+                          >
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="90"
+                            >
+                              90
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="130"
+                            >
+                              130
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="154"
+                            >
+                              154
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="230"
+                            >
+                              230
+                            </Option>
+                            <Option
+                              className="filter__item-list__select-item"
+                              value="300"
+                            >
+                              300
+                            </Option>
+                          </Select>
+                        </div>
+                      </li>
+                    </ul>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
+          {/* list */}
           <div className="catalog__content-list">
             {catalogItems.map((item, index) => {
               return (

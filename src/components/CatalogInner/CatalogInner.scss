@@ -54,6 +54,138 @@
     }
   }
 }
+
+//aside
+.aside-filter__tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aside-filter__tab {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #c4c4c4;
+  width: 50%;
+  &.active {
+    font-weight: 600;
+    color: #2f3035;
+  }
+  &.active span {
+    display: inline-block;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #1c62cd;
+  }
+}
+
+.filter__item-drop {
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 12px;
+    height: 8px;
+    background-image: url("../../img/arrow-drop.svg");
+    transform: rotate(0deg);
+  }
+  &.active::before {
+    transform: rotate(180deg);
+  }
+}
+.aside-filter__item-drop {
+  margin: 40px 0;
+}
+.aside-filter__item-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  padding-left: 26px;
+}
+
+.aside-filter__item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &.hide {
+    display: none;
+  }
+}
+.aside-filter__content-box {
+  width: 50%;
+  label {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+.aside-filter__item-info {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  &__text {
+    font-size: 14px;
+    line-height: 17px;
+    color: #c4c4c4;
+    padding-right: 10px;
+
+    span {
+      margin-left: 10px;
+      font-family: "Barlow", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      text-decoration-line: underline;
+      color: #2f3035;
+    }
+  }
+}
+
+.aside-filter__item-list {
+  padding-bottom: 10px;
+  margin-bottom: 26px;
+  border-bottom: 2px solid #c4c4c4;
+}
+.filter__item-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    padding-left: 12px;
+  }
+  &__select,
+  &-item {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #48494d;
+    &-item {
+      font-family: "Barlow", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #48494d;
+    }
+  }
+}
+
+//lib
+.ant-slider {
+  width: 100%;
+}
+
+//
+
 .pagination {
   width: 100%;
   margin-top: 40px;
