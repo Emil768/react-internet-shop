@@ -28,7 +28,11 @@
   &:hover {
     box-shadow: 3px 3px 20px rgba(50, 50, 50, 0.25);
     color: #1c62cd;
+    .product-item__title {
+      color: #1c62cd;
+    }
   }
+
   &:hover .product-item__hover-text {
     opacity: 1;
     color: #2f3035;

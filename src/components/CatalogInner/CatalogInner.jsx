@@ -12,7 +12,7 @@ import ProductItem from "../ProductItem/ProductItem";
 
 //lib
 
-import { Checkbox, Select, Slider } from "antd";
+import { Checkbox, Select, Slider, Button } from "antd";
 const { Option } = Select;
 
 //
@@ -21,6 +21,9 @@ function CatalogInner({ name }) {
   const [checked, setChecked] = useState(false);
   const [rangeValue, setRangeValue] = useState({ min: 10000, max: 50000 });
   const [dropItem, setDropItem] = useState(true);
+
+  const [activeBtnGrid, setActiveBtnGrid] = useState(true);
+
   const catalogItems = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const tabsNames = ["Параметры", "По марке"];
 
@@ -32,12 +35,23 @@ function CatalogInner({ name }) {
   const handleDropItem = () => {
     setDropItem(!dropItem);
   };
+
   const onChangeRange = (value) => {
     setRangeValue({
       min: value[0],
       max: value[1],
     });
   };
+
+  const handleActiveGrid = () => {
+    setActiveBtnGrid(true);
+  };
+
+  const handleActiveLine = () => {
+    setActiveBtnGrid(false);
+  };
+
+  console.log(activeBtnGrid);
 
   return (
     <section className="catalog">
@@ -51,7 +65,11 @@ function CatalogInner({ name }) {
             <button>еще</button>
           </div>
           <div className="catalog__filter-sort">
-            <Select defaultValue="popular" style={{ width: 178 }}>
+            <Select
+              defaultValue="popular"
+              style={{ width: 178 }}
+              className="catalog__filter-select"
+            >
               <Option value="jack">Jack</Option>
               <Option value="popular">По популярности</Option>
               <Option value="disabled" disabled>
@@ -59,7 +77,14 @@ function CatalogInner({ name }) {
               </Option>
               <Option value="Yiminghe">yiminghe</Option>
             </Select>
-            <button className="catalog__filter-btngrid">
+            <button
+              onClick={handleActiveGrid}
+              className={
+                activeBtnGrid
+                  ? "catalog__filter-btngrid active"
+                  : "catalog__filter-btngrid"
+              }
+            >
               <svg
                 width="23"
                 height="21"
@@ -67,53 +92,62 @@ function CatalogInner({ name }) {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect
-                  x="1"
-                  y="1"
-                  width="21"
-                  height="19"
-                  stroke="#2F3035"
-                  strokeWidth="2"
-                />
-                <rect
-                  x="7"
-                  y="6"
-                  width="2"
-                  height="2"
-                  fill="#2F3035"
-                  stroke="#2F3035"
-                  strokeWidth="2"
-                />
-                <rect
-                  x="7"
-                  y="13"
-                  width="2"
-                  height="2"
-                  fill="#2F3035"
-                  stroke="#2F3035"
-                  strokeWidth="2"
-                />
-                <rect
-                  x="14"
-                  y="6"
-                  width="2"
-                  height="2"
-                  fill="#2F3035"
-                  stroke="#2F3035"
-                  strokeWidth="2"
-                />
-                <rect
-                  x="14"
-                  y="13"
-                  width="2"
-                  height="2"
-                  fill="#2F3035"
-                  stroke="#2F3035"
-                  strokeWidth="2"
-                />
+                <g opacity="0.3">
+                  <rect
+                    x="1"
+                    y="1"
+                    width="21"
+                    height="19"
+                    stroke="#2F3035"
+                    strokeWidth="2"
+                  />
+                  <rect
+                    x="7"
+                    y="6"
+                    width="2"
+                    height="2"
+                    fill="#2F3035"
+                    stroke="#2F3035"
+                    strokeWidth="2"
+                  />
+                  <rect
+                    x="7"
+                    y="13"
+                    width="2"
+                    height="2"
+                    fill="#2F3035"
+                    stroke="#2F3035"
+                    strokeWidth="2"
+                  />
+                  <rect
+                    x="14"
+                    y="6"
+                    width="2"
+                    height="2"
+                    fill="#2F3035"
+                    stroke="#2F3035"
+                    strokeWidth="2"
+                  />
+                  <rect
+                    x="14"
+                    y="13"
+                    width="2"
+                    height="2"
+                    fill="#2F3035"
+                    stroke="#2F3035"
+                    strokeWidth="2"
+                  />
+                </g>
               </svg>
             </button>
-            <button className="catalog__filter-btnline">
+            <button
+              onClick={handleActiveLine}
+              className={
+                activeBtnGrid
+                  ? "catalog__filter-btnline"
+                  : "catalog__filter-btnline active"
+              }
+            >
               <svg
                 width="25"
                 height="19"
@@ -364,6 +398,7 @@ function CatalogInner({ name }) {
                           </Select>
                         </div>
                       </li>
+
                       <li className="aside-filter__item-list">
                         <div className="filter__item-list">
                           <p className="filter__item-list__title">
@@ -408,6 +443,180 @@ function CatalogInner({ name }) {
                           </Select>
                         </div>
                       </li>
+
+                      <li className="aside-filter__item-drop">
+                        <p
+                          onClick={handleDropItem}
+                          className={
+                            dropItem
+                              ? "aside-filter__item-title filter__item-drop"
+                              : "aside-filter__item-title filter__item-drop active"
+                          }
+                        >
+                          Бренд
+                        </p>
+                        <div
+                          className={
+                            dropItem
+                              ? "aside-filter__item-content aside-filter__item-wrap "
+                              : "aside-filter__item-content hide"
+                          }
+                        >
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">BRP</label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">Spark 2</label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">Spark 3 </label>
+                            </Checkbox>
+                          </div>
+                        </div>
+                        <button className="filter-more">Показать еще</button>
+                      </li>
+
+                      <li className="aside-filter__item-drop">
+                        <p
+                          onClick={handleDropItem}
+                          className={
+                            dropItem
+                              ? "aside-filter__item-title filter__item-drop"
+                              : "aside-filter__item-title filter__item-drop active"
+                          }
+                        >
+                          Модель
+                        </p>
+                        <div
+                          className={
+                            dropItem
+                              ? "aside-filter__item-content aside-filter__item-wrap "
+                              : "aside-filter__item-content hide"
+                          }
+                        >
+                          <input
+                            className="filter-search"
+                            type="text"
+                            placeholder="Введите модель"
+                          />
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">Sea-doo Spark 2</label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">SeaDoo Spark 90 </label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">SeaDoo GTI 155 </label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">SeaDoo GTR 230 </label>
+                            </Checkbox>
+                          </div>
+                        </div>
+                        <button className="filter-more">Показать еще</button>
+                      </li>
+
+                      <li className="aside-filter__item-drop btn-checked">
+                        <p
+                          onClick={handleDropItem}
+                          className={
+                            dropItem
+                              ? "aside-filter__item-title filter__item-drop"
+                              : "aside-filter__item-title filter__item-drop active"
+                          }
+                        >
+                          Акции
+                        </p>
+                        <div
+                          className={
+                            dropItem
+                              ? "aside-filter__item-content  "
+                              : "aside-filter__item-content hide"
+                          }
+                        >
+                          <div className="aside-filter__content-box">
+                            <button className="btn-checked__text active">
+                              SALE
+                            </button>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <button className="btn-checked__text">NEW</button>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <button className="btn-checked__text">HIT</button>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <button className="btn-checked__text">Дилер</button>
+                          </div>
+                        </div>
+                        <button className="filter-more">Показать еще</button>
+                      </li>
+
+                      <li className="aside-filter__item-drop">
+                        <p
+                          onClick={handleDropItem}
+                          className={
+                            dropItem
+                              ? "aside-filter__item-title filter__item-drop"
+                              : "aside-filter__item-title filter__item-drop active"
+                          }
+                        >
+                          Страны
+                        </p>
+                        <div
+                          className={
+                            dropItem
+                              ? "aside-filter__item-content aside-filter__item-wrap "
+                              : "aside-filter__item-content hide"
+                          }
+                        >
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">Россия</label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">Германия</label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">Китай </label>
+                            </Checkbox>
+                          </div>
+                          <div className="aside-filter__content-box">
+                            <Checkbox style={{ cursor: "pointer" }}>
+                              <label htmlFor="">США</label>
+                            </Checkbox>
+                          </div>
+                        </div>
+                        <button className="filter-more">Показать еще</button>
+                      </li>
+
+                      <li className="aside-filter__item-drop aside-filter__item-btn ">
+                        <button className="filter-btn__send" type="submit">
+                          Выбрать
+                        </button>
+                        <p className="filter__extra-content">
+                          Дополнительные параметры
+                        </p>
+                        <button className="filter-btn__reset" type="submit">
+                          Сбросить фильтр
+                        </button>
+                      </li>
                     </ul>
                   </form>
                 </div>
@@ -418,12 +627,20 @@ function CatalogInner({ name }) {
           <div className="catalog__content-list">
             {catalogItems.map((item, index) => {
               return (
-                <ProductItem
-                  img={jetSkiOrange}
-                  className="product-item product-item__size"
-                  name="Гидроцикл BRP SeaDoo GTI 130hp SE Black\Mango"
-                  price="1 049 500 ₽"
-                />
+                <div
+                  className={
+                    activeBtnGrid
+                      ? "product__item-wrapper"
+                      : "product__item-wrapper--list"
+                  }
+                >
+                  <ProductItem
+                    img={jetSkiOrange}
+                    className="product-item product-item__size"
+                    name="Гидроцикл BRP SeaDoo GTI 130hp SE Black\Mango"
+                    price="1 049 500 ₽"
+                  />
+                </div>
               );
             })}
             <div className="pagination">

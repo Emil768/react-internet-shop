@@ -12,13 +12,16 @@ body {
   font-size: 20px;
   line-height: 24px;
   font-style: normal;
-  font-weight: 400;
+
   color: #2f3035;
 }
 
 a {
   text-decoration: none;
   color: #2f3035;
+  &:hover {
+    color: unset;
+  }
 }
 
 ul,
@@ -32,7 +35,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   margin: 0;
 }
 p {
