@@ -633,12 +633,15 @@ function CatalogInner({ name }) {
                       ? "product__item-wrapper"
                       : "product__item-wrapper--list"
                   }
+                  key={index}
                 >
                   <ProductItem
+                    url={name}
                     img={jetSkiOrange}
                     className="product-item product-item__size"
                     name="Гидроцикл BRP SeaDoo GTI 130hp SE Black\Mango"
                     price="1 049 500 ₽"
+                    index={index}
                   />
                 </div>
               );

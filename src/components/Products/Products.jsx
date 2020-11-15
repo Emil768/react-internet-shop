@@ -111,7 +111,7 @@ function Products({ title, hideButton }) {
               })}
             </div>
             <div className="tabs-container products__container">
-              {tabsNames.map((item, index) => {
+              {tabsNames.map((tab, index) => {
                 return (
                   <div
                     className={
@@ -125,7 +125,14 @@ function Products({ title, hideButton }) {
                       {/* slider__item */}
                       <Slider {...settings}>
                         {productItems.map((item, index) => {
-                          return <ProductItem key={index} {...item} />;
+                          return (
+                            <ProductItem
+                              key={index}
+                              index={index}
+                              {...item}
+                              url={tab}
+                            />
+                          );
                         })}
                       </Slider>
                     </div>

@@ -1,0 +1,138 @@
+.product-card {
+  margin-bottom: 80px;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 10px;
+  }
+  &__img-box {
+    font-family: "Barlow", sans-serif;
+    width: 50%;
+    padding-top: 64px;
+    text-align: center;
+    position: relative;
+    &::before {
+      padding: 13px 26px;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 0.12em;
+      border-radius: 3px;
+    }
+  }
+  &__price-old {
+    display: inline-block;
+    font-size: 30px;
+    line-height: 36px;
+    opacity: 0.6;
+    margin-bottom: 8px;
+    background-image: url("../../img/line.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__price-new {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 17px;
+  }
+  &__link {
+    font-family: "SFProDisplay-Regular", sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: #1c62cd;
+  }
+  &__info {
+    width: 50%;
+  }
+  &__code {
+    font-size: 15px;
+    line-height: 18px;
+    opacity: 0.6;
+    margin-bottom: 22px;
+  }
+  &__buttons {
+    display: flex;
+    margin-bottom: 50px;
+    button {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background-color: transparent;
+      margin-right: 30px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    border-bottom: 1px solid rgba(47, 48, 53, 0.1);
+    padding: 15px 0 6px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 24px;
+    &:first-child {
+      padding-top: 0;
+    }
+    &-left {
+      padding-right: 15px;
+    }
+    &-right {
+      width: 125px;
+    }
+  }
+  &__more {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    color: #1c62cd;
+    display: inline-block;
+    margin-bottom: 45px;
+  }
+  &__btn {
+    button {
+      border: none;
+      outline: none;
+      background: #1c62cd;
+      border-radius: 3px;
+      padding: 16px 53px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+}
+
+.tabs {
+  margin-bottom: 20px;
+}
+.aside-filter__tab {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: unset;
+  padding-right: 20px;
+
+  &:last-child {
+    padding-right: 0;
+  }
+  &.active {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

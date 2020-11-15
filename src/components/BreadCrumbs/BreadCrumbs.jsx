@@ -2,7 +2,7 @@ import React from "react";
 import "./BreadCrumbs.scss";
 //lib
 import { Link } from "react-router-dom";
-function BreadCrumbs({ name }) {
+function BreadCrumbs({ name, product }) {
   return (
     <div className="breadcrumbs">
       <div className="container">
@@ -17,6 +17,16 @@ function BreadCrumbs({ name }) {
               {name}
             </Link>
           </li>
+          {product && (
+            <li className="breadcrumbs__list-item">
+              <Link
+                className="breadcrumbs__list-link"
+                to={`/catalog/${name}/${product}`}
+              >
+                {product}
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </div>

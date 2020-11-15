@@ -20,7 +20,7 @@ function HeaderBottom() {
   return (
     <div className="header__bottom">
       <div className="container">
-        <div className="header__bottom-content">
+        <div className="header__bottom-content ">
           <ul className="menu-categories">
             {menuItems.map((item, index) => {
               return (
