@@ -10,7 +10,7 @@ import Catalog from "./pages/Catalog";
 
 //lib
 import { Route } from "react-router";
-import ProductCard from "./components/ProductCard/ProductCard";
+import ProductCard from "./pages/ProductCard";
 //
 function App() {
   return (

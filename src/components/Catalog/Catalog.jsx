@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CatalogInner.scss";
+import "./Catalog.scss";
 
 //img
 import jetSkiOrange from "../../img/jetSki-orange.png";
@@ -16,7 +16,7 @@ import { Checkbox, Select, Slider, Button } from "antd";
 const { Option } = Select;
 
 //
-function CatalogInner({ name }) {
+function Catalog({ name }) {
   const [activeTab, setActiveTab] = useState(0);
   const [checked, setChecked] = useState(false);
   const [rangeValue, setRangeValue] = useState({ min: 10000, max: 50000 });
@@ -226,12 +226,12 @@ function CatalogInner({ name }) {
                         >
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">В наличие</label>
+                              В наличие
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">Под заказ</label>
+                              Под заказ
                             </Checkbox>
                           </div>
                         </div>
@@ -256,17 +256,17 @@ function CatalogInner({ name }) {
                         >
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">Все</label>
+                              Все
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">Новинки</label>
+                              Новинки
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">Акции</label>
+                              Акции
                             </Checkbox>
                           </div>
                         </div>
@@ -464,17 +464,17 @@ function CatalogInner({ name }) {
                         >
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">BRP</label>
+                              BRP
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">Spark 2</label>
+                              Spark 2
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">Spark 3 </label>
+                              Spark 3
                             </Checkbox>
                           </div>
                         </div>
@@ -506,22 +506,22 @@ function CatalogInner({ name }) {
                           />
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">Sea-doo Spark 2</label>
+                              Sea-doo Spark 2
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">SeaDoo Spark 90 </label>
+                              SeaDoo Spark 90
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">SeaDoo GTI 155 </label>
+                              SeaDoo GTI 155
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">SeaDoo GTR 230 </label>
+                              SeaDoo GTR 230
                             </Checkbox>
                           </div>
                         </div>
@@ -584,22 +584,22 @@ function CatalogInner({ name }) {
                         >
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">Россия</label>
+                              Россия
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">Германия</label>
+                              Германия
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">Китай </label>
+                              Китай
                             </Checkbox>
                           </div>
                           <div className="aside-filter__content-box">
                             <Checkbox style={{ cursor: "pointer" }}>
-                              <label htmlFor="">США</label>
+                              Китай
                             </Checkbox>
                           </div>
                         </div>
@@ -678,4 +678,4 @@ function CatalogInner({ name }) {
   );
 }
 
-export default CatalogInner;
+export default Catalog;

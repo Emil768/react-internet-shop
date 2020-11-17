@@ -2,7 +2,7 @@ import React from "react";
 
 //components
 import BreadCrumbs from "../components/BreadCrumbs/BreadCrumbs";
-import CatalogInner from "../components/CatalogInner/CatalogInner";
+import CatalogInner from "../components/Catalog/Catalog";
 //
 
 //lib

@@ -13,10 +13,7 @@ import "./ProductCard.scss";
 import jetSkiLarge from "../../img/jetSki-large.png";
 
 //
-function ProductCard(props) {
-  console.log(props);
-  const catalogName = props.match.params.name;
-  const productName = props.match.params.product;
+function ProductCard({ catalogName, productName }) {
   const [activeTab, setActiveTab] = useState(0);
   const tabsNames = ["Характеристики", "Наличие в магазине"];
 
@@ -25,7 +22,7 @@ function ProductCard(props) {
     setActiveTab(index);
   };
   return (
-    <div className="product-card">
+    <section className="product-card">
       <BreadCrumb name={catalogName} product={productName} />
       <div className="container">
         <div className="product-card__content">
@@ -156,7 +153,7 @@ function ProductCard(props) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

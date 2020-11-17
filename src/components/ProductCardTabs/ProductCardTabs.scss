@@ -1,0 +1,104 @@
+.card__tabs {
+  &-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #f0f0f4;
+    padding: 17px 0;
+    margin-bottom: 50px;
+  }
+}
+.card__tab {
+  font-size: 20px;
+  line-height: 24px;
+  opacity: 0.6;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  &.active {
+    opacity: 1;
+    border-bottom: 2px solid #1c62cd;
+  }
+}
+
+.card__top-line {
+  margin-bottom: 50px;
+}
+
+.card__label-search {
+  font-size: 17px;
+  line-height: 20px;
+  color: rgba(47, 48, 53, 0.7);
+  margin-right: 17px;
+}
+
+.card__input-search {
+  border: none;
+  outline: none;
+  background: #f0f0f4;
+  border-radius: 3px;
+  padding: 9px 17px;
+  margin-right: 100px;
+}
+
+.card__label-pickup {
+  margin-left: 54px;
+
+  font-size: 17px;
+  line-height: 20px;
+  color: rgba(47, 48, 53, 0.7);
+}
+
+.workhours {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__list {
+  &-item {
+    display: flex;
+
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(47, 48, 53, 0.1);
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(47, 48, 53, 0.7);
+  }
+  &-itemtitle {
+    font-size: 20px;
+    line-height: 24px;
+    color: #2f3035;
+  }
+  &-adress {
+    width: 219px;
+    margin-right: 81px;
+  }
+  &-workhours {
+    width: 157px;
+    margin-right: 96px;
+    span {
+      display: block;
+    }
+  }
+  &-avaliable {
+    width: 140px;
+    margin-right: 60px;
+  }
+  &-num {
+    width: 104px;
+  }
+  &-btn {
+    margin-left: auto;
+    button {
+      padding: 9px 40px;
+      border: none;
+      background: #1c62cd;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 16px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+}
