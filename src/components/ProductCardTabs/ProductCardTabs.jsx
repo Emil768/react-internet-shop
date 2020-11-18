@@ -27,6 +27,7 @@ function ProductCardTabs() {
             {cardTabs.map((tab, index) => {
               return (
                 <a
+                  key={index}
                   className={
                     activeTab === index
                       ? "tab card__tab active"

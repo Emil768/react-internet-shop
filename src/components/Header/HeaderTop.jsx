@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //img
 import logo from "../../img/logo.svg";
@@ -6,13 +6,26 @@ import user from "../../img/user.svg";
 import shop from "../../img/shop.svg";
 import heart from "../../img/heart.svg";
 //
+
+//components
+import MobileMenu from "../MobileMenu/MobileMenu";
+//
 function HeaderTop() {
   const items = ["Магазины", "Акции", "Доставка и оплата"];
+  const [activeMobileMenu, setActiveMobileMenu] = useState(false);
+  const handlerActiveMenu = () => {
+    setActiveMobileMenu(!activeMobileMenu);
+  };
   return (
     <div className="header__top">
       <div className="container">
         <div className="header__top-content">
           <nav className="menu">
+            <button className="menu__btn" onClick={handlerActiveMenu}>
+              <div className="menu__btn-line"></div>
+              <div className="menu__btn-line"></div>
+              <div className="menu__btn-line"></div>
+            </button>
             <ul className="menu__list">
               {items.map((item, index) => {
                 return (
@@ -52,6 +65,20 @@ function HeaderTop() {
             </ul>
           </div>
         </div>
+      </div>
+      <MobileMenu state={activeMobileMenu} />
+      <div className="menu-mobile__linewrapper ">
+        <ul className="menu__mobile-line">
+          {items.map((item, index) => {
+            return (
+              <li key={index} className="menu__item">
+                <a className="menu__link" href="/#">
+                  {item}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
