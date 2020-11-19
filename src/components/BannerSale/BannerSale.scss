@@ -1,3 +1,23 @@
 .banner {
   margin-bottom: 80px;
 }
+//media
+@media (max-width: 1200px) {
+  .banner {
+    &__link {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 640px) {
+  .banner {
+    &__link {
+      img {
+        min-height: 90px;
+        object-fit: contain;
+      }
+    }
+  }
+}

@@ -79,6 +79,39 @@ function Products({ title, hideButton }) {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          arrows: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 870,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          dots: true,
+        },
+      },
+    ],
   };
 
   const handlerActiveTab = (e, index) => {
@@ -92,7 +125,7 @@ function Products({ title, hideButton }) {
         <div className="products__inner">
           <h1 className="product__title">{title}</h1>
           <div className="tabs-wrapper">
-            <div className="products__tabs">
+            <div className="products__tabs mobile-overflow">
               {tabsNames.map((tab, index) => {
                 return (
                   <a
@@ -110,38 +143,39 @@ function Products({ title, hideButton }) {
                 );
               })}
             </div>
-            <div className="tabs-container products__container">
-              {tabsNames.map((tab, index) => {
-                return (
-                  <div
-                    className={
-                      activeTab === index
-                        ? "tabs-content products__content tabs-content--active"
-                        : "tabs-content products__content"
-                    }
-                    key={index}
-                  >
-                    <div className="product-slider">
-                      {/* slider__item */}
-                      <Slider {...settings}>
-                        {productItems.map((item, index) => {
-                          return (
-                            <ProductItem
-                              key={index}
-                              index={index}
-                              {...item}
-                              url={tab}
-                            />
-                          );
-                        })}
-                      </Slider>
-                    </div>
-                    {/* end */}
-                  </div>
-                );
-              })}
-            </div>
           </div>
+          <div className="tabs-container products__container">
+            {tabsNames.map((tab, index) => {
+              return (
+                <div
+                  className={
+                    activeTab === index
+                      ? "tabs-content products__content tabs-content--active"
+                      : "tabs-content products__content"
+                  }
+                  key={index}
+                >
+                  <div className="product-slider">
+                    {/* slider__item */}
+                    <Slider {...settings}>
+                      {productItems.map((item, index) => {
+                        return (
+                          <ProductItem
+                            key={index}
+                            index={index}
+                            {...item}
+                            url={tab}
+                          />
+                        );
+                      })}
+                    </Slider>
+                  </div>
+                  {/* end */}
+                </div>
+              );
+            })}
+          </div>
+
           {hideButton ? (
             <div className="product__more">
               <a className="product__more-link" href="/#">

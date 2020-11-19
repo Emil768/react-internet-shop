@@ -24,23 +24,25 @@ function Search() {
     <section className="search page-section">
       <div className="container">
         <div className="search__inner">
-          <div className="search__tabs">
-            {tabs.map((tab, index) => {
-              return (
-                <a
-                  onClick={(e) => handlerActiveItem(e, index)}
-                  className={
-                    activeTab === index
-                      ? "search__tabs-item active"
-                      : "search__tabs-item "
-                  }
-                  href="/#"
-                  key={index}
-                >
-                  {tab}
-                </a>
-              );
-            })}
+          <div className="search__tabs ">
+            <div className="mobile-overflow">
+              {tabs.map((tab, index) => {
+                return (
+                  <a
+                    onClick={(e) => handlerActiveItem(e, index)}
+                    className={
+                      activeTab === index
+                        ? "search__tabs-item active"
+                        : "search__tabs-item "
+                    }
+                    href="/#"
+                    key={index}
+                  >
+                    {tab}
+                  </a>
+                );
+              })}
+            </div>
           </div>
           <div className="search__content">
             {formNames.map((item, index) => {

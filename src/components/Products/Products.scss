@@ -72,3 +72,50 @@
     }
   }
 }
+
+//media
+@media (max-width: 1300px) {
+  .product-slider {
+    .slick-dots {
+      bottom: -40px;
+      button {
+        background-color: #1c62cd;
+        background: #c4c4c4;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        &::before {
+          display: none;
+        }
+      }
+      .slick-active {
+        button {
+          background-color: #1c62cd;
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .products {
+    .product__more {
+      margin-top: 70px;
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .tabs-wrapper {
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width: 640px) {
+  .product__title {
+    text-align: center;
+  }
+  .products__container {
+    text-align: center;
+  }
+}
