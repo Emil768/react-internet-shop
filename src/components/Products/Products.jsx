@@ -17,7 +17,7 @@ import ProductItem from "../ProductItem/ProductItem.jsx";
 //
 
 function Products({ title, hideButton }) {
-  const [activeFavorite, setActiveFavorite] = useState(null);
+  // const [activeFavorite, setActiveFavorite] = useState(null);
   const [activeTab, setActiveTab] = useState(0);
   // const [activeProduct, setActiveProduct] = useState(0);
 
@@ -65,7 +65,6 @@ function Products({ title, hideButton }) {
     prevArrow: (
       <ArrowPrev
         color="black"
-        classArrow
         classArrow="product-slider__slider-btn product-slider__slider-btnPrev"
       />
     ),

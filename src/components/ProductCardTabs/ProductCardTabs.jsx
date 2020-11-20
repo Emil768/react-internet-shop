@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ProductCardTabs.scss";
 //lib
 import { Checkbox } from "antd";
-import { useEffect } from "react";
+
 //
 function ProductCardTabs() {
   const [activeTab, setActiveTab] = useState(0);
