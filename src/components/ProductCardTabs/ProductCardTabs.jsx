@@ -23,7 +23,7 @@ function ProductCardTabs() {
     <section className="card__tabs">
       <div className="container">
         <div className="tabs-wrapper">
-          <div className="tabs card__tabs-box">
+          <div className="tabs card__tabs-box mobile-overflow">
             {cardTabs.map((tab, index) => {
               return (
                 <a
@@ -41,121 +41,113 @@ function ProductCardTabs() {
               );
             })}
           </div>
-          <div className="tabs-container">
-            <div className="card__tab-content tabs-content"></div>
-            <div className="card__tab-content tabs-content"></div>
-            <div className="card__tab-content tabs-content"></div>
-            <div className="card__tab-content tabs-content">
-              <form action="" className="card-form">
-                <div className="card__top-line">
-                  <label className="card__label-search" htmlFor="">
-                    Магазин
-                  </label>
-                  <input className="card__input-search" type="text" />
-                  <Checkbox className="card__label-pickup">
-                    Забрать сегодня
-                  </Checkbox>
-                  <Checkbox className="card__label-pickup">
-                    Забрать в течение недели
-                  </Checkbox>
-                </div>
-                <ul className="card__list">
-                  <li className="card__list-item card__list-itemtitle">
-                    <div className="card__list-adress ">Адрес</div>
-                    <div className="card__list-workhours ">Режим работы</div>
-                    <div className="card__list-avaliable ">Доступно</div>
-                    <div className="card__list-num ">Количество</div>
-                  </li>
-                  <li className="card__list-item">
-                    <div className="card__list-adress">
-                      Москва, ул. Науки 25
+        </div>
+        <div className="tabs-container">
+          <div className="card__tab-content tabs-content"></div>
+          <div className="card__tab-content tabs-content"></div>
+          <div className="card__tab-content tabs-content"></div>
+          <div className="card__tab-content tabs-content">
+            <form action="" className="card-form">
+              <div className="card__top-line">
+                <label className="card__label-search " htmlFor="">
+                  Магазин
+                </label>
+                <input className="card__input-search" type="text" />
+                <Checkbox className="card__label-pickup">
+                  Забрать сегодня
+                </Checkbox>
+                <Checkbox className="card__label-pickup">
+                  Забрать в течение недели
+                </Checkbox>
+              </div>
+              <ul className="card__list">
+                <li className="card__list-item card__list-itemtitle">
+                  <div className="card__list-adress ">Адрес</div>
+                  <div className="card__list-workhours ">Режим работы</div>
+                  <div className="card__list-avaliable ">Доступно</div>
+                  <div className="card__list-num ">Количество</div>
+                </li>
+                <li className="card__list-item">
+                  <div className="card__list-adress">Москва, ул. Науки 25</div>
+                  <div className="card__list-workhours">
+                    <div className="workhours">
+                      <span>пн-сб:</span>
+                      <span>08:00-19:00</span>
                     </div>
-                    <div className="card__list-workhours">
-                      <div className="workhours">
-                        <span>пн-сб:</span>
-                        <span>08:00-19:00</span>
-                      </div>
-                      <div className="workhours">
-                        <span>вс:</span>
-                        <span>09:00-17:00</span>
-                      </div>
+                    <div className="workhours">
+                      <span>вс:</span>
+                      <span>09:00-17:00</span>
                     </div>
-                    <div className="card__list-avaliable">В наличии</div>
-                    <div className="card__list-num">1</div>
-                    <div className="card__list-btn">
-                      <button type="submit">Купить</button>
-                    </div>
-                  </li>
+                  </div>
+                  <div className="card__list-avaliable">В наличии</div>
+                  <div className="card__list-num">1</div>
+                  <div className="card__list-btn">
+                    <button type="submit">Купить</button>
+                  </div>
+                </li>
 
-                  <li className="card__list-item">
-                    <div className="card__list-adress">
-                      Москва, ул. Науки 25
+                <li className="card__list-item">
+                  <div className="card__list-adress">Москва, ул. Науки 25</div>
+                  <div className="card__list-workhours">
+                    <div className="workhours">
+                      <span>пн-сб:</span>
+                      <span>08:00-19:00</span>
                     </div>
-                    <div className="card__list-workhours">
-                      <div className="workhours">
-                        <span>пн-сб:</span>
-                        <span>08:00-19:00</span>
-                      </div>
-                      <div className="workhours">
-                        <span>вс:</span>
-                        <span>09:00-17:00</span>
-                      </div>
+                    <div className="workhours">
+                      <span>вс:</span>
+                      <span>09:00-17:00</span>
                     </div>
-                    <div className="card__list-avaliable">В наличии</div>
-                    <div className="card__list-num">1</div>
-                    <div className="card__list-btn">
-                      <button type="submit">Купить</button>
-                    </div>
-                  </li>
+                  </div>
+                  <div className="card__list-avaliable">В наличии</div>
+                  <div className="card__list-num">1</div>
+                  <div className="card__list-btn">
+                    <button type="submit">Купить</button>
+                  </div>
+                </li>
 
-                  <li className="card__list-item">
-                    <div className="card__list-adress">
-                      Москва, ул. Науки 25
+                <li className="card__list-item">
+                  <div className="card__list-adress">Москва, ул. Науки 25</div>
+                  <div className="card__list-workhours">
+                    <div className="workhours">
+                      <span>пн-сб:</span>
+                      <span>08:00-19:00</span>
                     </div>
-                    <div className="card__list-workhours">
-                      <div className="workhours">
-                        <span>пн-сб:</span>
-                        <span>08:00-19:00</span>
-                      </div>
-                      <div className="workhours">
-                        <span>вс:</span>
-                        <span>09:00-17:00</span>
-                      </div>
+                    <div className="workhours">
+                      <span>вс:</span>
+                      <span>09:00-17:00</span>
                     </div>
-                    <div className="card__list-avaliable">В наличии</div>
-                    <div className="card__list-num">1</div>
-                    <div className="card__list-btn">
-                      <button type="submit">Купить</button>
-                    </div>
-                  </li>
+                  </div>
+                  <div className="card__list-avaliable">В наличии</div>
+                  <div className="card__list-num">1</div>
+                  <div className="card__list-btn">
+                    <button type="submit">Купить</button>
+                  </div>
+                </li>
 
-                  <li className="card__list-item">
-                    <div className="card__list-adress">
-                      Москва, ул. Науки 25
+                <li className="card__list-item">
+                  <div className="card__list-adress">Москва, ул. Науки 25</div>
+                  <div className="card__list-workhours">
+                    <div className="workhours">
+                      <span>пн-сб:</span>
+                      <span>08:00-19:00</span>
                     </div>
-                    <div className="card__list-workhours">
-                      <div className="workhours">
-                        <span>пн-сб:</span>
-                        <span>08:00-19:00</span>
-                      </div>
-                      <div className="workhours">
-                        <span>вс:</span>
-                        <span>09:00-17:00</span>
-                      </div>
+                    <div className="workhours">
+                      <span>вс:</span>
+                      <span>09:00-17:00</span>
                     </div>
-                    <div className="card__list-avaliable">В наличии</div>
-                    <div className="card__list-num">1</div>
-                    <div className="card__list-btn">
-                      <button type="submit">Купить</button>
-                    </div>
-                  </li>
-                </ul>
-              </form>
-            </div>
-            <div className="card__tab-content tabs-content"></div>
-            <div className="card__tab-content tabs-content"></div>
-            <div className="card__tab-content tabs-content"></div>
+                  </div>
+                  <div className="card__list-avaliable">В наличии</div>
+                  <div className="card__list-num">1</div>
+                  <div className="card__list-btn">
+                    <button type="submit">Купить</button>
+                  </div>
+                </li>
+              </ul>
+            </form>
           </div>
+          <div className="card__tab-content tabs-content"></div>
+          <div className="card__tab-content tabs-content"></div>
+          <div className="card__tab-content tabs-content"></div>
         </div>
       </div>
     </section>

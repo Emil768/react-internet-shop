@@ -27,12 +27,15 @@ function ProductCard({ catalogName, productName }) {
       <div className="container">
         <div className="product-card__content">
           <div className="product-card__img-box product-item__sale">
-            <img src={jetSkiLarge} alt="" />
+            <img className="product-card__img" src={jetSkiLarge} alt="" />
             <p className="product-card__price-old">1 200 475 ₽</p>
             <p className="product-card__price-new">1 100 475 ₽</p>
             <a className="product-card__link" href="/#">
               Нашли дешевле? Снизим цену!
             </a>
+            <div className="product-card__btn product-card__btn-mobile">
+              <button>Купить</button>
+            </div>
           </div>
           <div className="product-card__info">
             <h1 className="product-card__title">{productName}</h1>

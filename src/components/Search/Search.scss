@@ -85,7 +85,7 @@
       &-btn {
         font-size: 0;
         line-height: 0;
-        background-color: transparent;
+        background: transparent;
         background-image: url("../../img/mobile-search.svg");
         position: absolute;
         right: 8px;
@@ -94,6 +94,9 @@
         height: 24px;
         padding: 17px;
         background-repeat: no-repeat;
+        &:hover {
+          background: transparent;
+        }
       }
       &-input {
         height: 50px;
