@@ -24,3 +24,11 @@
     left: 11px;
   }
 }
+
+//media
+
+@media (min-width: 968px) {
+  .menu-mobile {
+    display: none;
+  }
+}

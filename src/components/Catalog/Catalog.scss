@@ -100,6 +100,12 @@
   justify-content: space-between;
 }
 
+.aside-filter {
+  &.hide {
+    display: none;
+  }
+}
+
 .aside-filter__tab {
   font-weight: 400;
   font-size: 16px;
@@ -181,8 +187,12 @@
   .catalog {
     &__content {
       flex-wrap: wrap;
+      &-aside {
+        margin-right: 0;
+      }
     }
   }
+
   .aside__btn {
     display: block;
   }
@@ -211,6 +221,14 @@
       &__item {
         margin-right: 0;
       }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .aside-filter {
+    &.hide {
+      display: block;
     }
   }
 }

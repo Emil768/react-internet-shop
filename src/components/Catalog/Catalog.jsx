@@ -182,34 +182,39 @@ function Catalog({ name }) {
           <div className="aside__btn" onClick={handlerActiveFilter}>
             Фильтр
           </div>
-          {activeFilter && (
-            <div className="catalog__content-aside aside-filter">
-              <div className="aside-tabs__wrapper">
-                <div className="aside-filter__tabs">
-                  {tabsNames.map((tab, index) => {
-                    return (
-                      <a
-                        onClick={(e) => handlerActiveTab(e, index)}
-                        className={
-                          activeTab === index
-                            ? " aside-filter__tab active"
-                            : " aside-filter__tab"
-                        }
-                        key={index}
-                        href="/#"
-                      >
-                        <span>{tab}</span>
-                      </a>
-                    );
-                  })}
-                </div>
-                <div className="aside-tabs__container">
-                  <AsideForm />
-                </div>
+
+          <div
+            className={
+              activeFilter
+                ? "catalog__content-aside aside-filter"
+                : "catalog__content-aside aside-filter hide"
+            }
+          >
+            <div className="aside-tabs__wrapper">
+              <div className="aside-filter__tabs">
+                {tabsNames.map((tab, index) => {
+                  return (
+                    <a
+                      onClick={(e) => handlerActiveTab(e, index)}
+                      className={
+                        activeTab === index
+                          ? " aside-filter__tab active"
+                          : " aside-filter__tab"
+                      }
+                      key={index}
+                      href="/#"
+                    >
+                      <span>{tab}</span>
+                    </a>
+                  );
+                })}
+              </div>
+              <div className="aside-tabs__container">
+                <AsideForm />
               </div>
             </div>
-          )}
-          {/* list */}
+          </div>
+
           <div className="catalog__content-list">
             {catalogItems.map((item, index) => {
               return (

@@ -49,17 +49,16 @@ function Footer() {
               >
                 Информация
               </h5>
-              <ul className="footer-list">
-                {dropListInfo &&
-                  footerList.info.map((item, index) => {
-                    return (
-                      <li className="footer-list__item " key={index}>
-                        <a href="" className="footer-list__link">
-                          {item}
-                        </a>
-                      </li>
-                    );
-                  })}
+              <ul className={dropListInfo ? "footer-list" : "footer-list hide"}>
+                {footerList.info.map((item, index) => {
+                  return (
+                    <li className="footer-list__item " key={index}>
+                      <a href="" className="footer-list__link">
+                        {item}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className="footer__top-item footer__top-itemdrop">
@@ -74,17 +73,16 @@ function Footer() {
                 {" "}
                 Интернет-магазин
               </h5>
-              <ul className="footer-list">
-                {dropListShop &&
-                  footerList.shop.map((item, index) => {
-                    return (
-                      <li className="footer-list__item" key={index}>
-                        <a href="" className="footer-list__link">
-                          {item}
-                        </a>
-                      </li>
-                    );
-                  })}
+              <ul className={dropListShop ? "footer-list" : "footer-list hide"}>
+                {footerList.shop.map((item, index) => {
+                  return (
+                    <li className="footer-list__item " key={index}>
+                      <a href="" className="footer-list__link">
+                        {item}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className="footer__top-item">

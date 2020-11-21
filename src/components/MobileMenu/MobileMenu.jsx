@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./MobileMenu.scss";
 
 //img
@@ -10,9 +10,13 @@ import delivery from "../../img/delivery.svg";
 import sale from "../../img/sale.svg";
 //
 
-function MobileMenu({ state }) {
+//lib
+import { Link } from "react-router-dom";
+//
+
+const MobileMenu = forwardRef(({ state }, ref) => {
   return (
-    <ul className={state ? "menu-mobile active" : "menu-mobile"}>
+    <ul className={state ? "menu-mobile active" : "menu-mobile"} ref={ref}>
       <li className="menu-mobile__item">
         <a href="/#" className="menu-mobile__link">
           <img className="menu-mobile__img" src={user} alt="" />
@@ -97,6 +101,6 @@ function MobileMenu({ state }) {
       </li>
     </ul>
   );
-}
+});
 
 export default MobileMenu;

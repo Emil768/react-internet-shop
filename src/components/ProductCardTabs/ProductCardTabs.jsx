@@ -52,7 +52,14 @@ function ProductCardTabs() {
                 <label className="card__label-search " htmlFor="">
                   Магазин
                 </label>
-                <input className="card__input-search" type="text" />
+                <div className="card__input-wrapper">
+                  <input
+                    className="card__input-search"
+                    placeholder="Введите название магазина"
+                    type="text"
+                  />
+                  <span></span>
+                </div>
                 <Checkbox className="card__label-pickup">
                   Забрать сегодня
                 </Checkbox>

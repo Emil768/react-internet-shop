@@ -48,7 +48,13 @@
     }
   }
   &-list {
+    &.hide {
+      display: none;
+    }
     line-height: 22px;
+  }
+  &__drop {
+    pointer-events: none;
   }
 
   &__bottom {
@@ -118,6 +124,7 @@
       justify-content: center;
     }
     &__drop {
+      pointer-events: auto;
       position: relative;
       padding: 16px 0;
       font-weight: 500;
@@ -157,6 +164,16 @@
         &:last-child {
           margin-bottom: 0;
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .footer {
+    &-list {
+      &.hide {
+        display: block;
       }
     }
   }

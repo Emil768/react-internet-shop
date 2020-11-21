@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 //img
 import logo from "../../img/logo.svg";
@@ -11,11 +11,22 @@ import heart from "../../img/heart.svg";
 import MobileMenu from "../MobileMenu/MobileMenu";
 //
 function HeaderTop() {
+  const refMenu = useRef();
   const items = ["Магазины", "Акции", "Доставка и оплата"];
   const [activeMobileMenu, setActiveMobileMenu] = useState(false);
   const handlerActiveMenu = () => {
     setActiveMobileMenu(!activeMobileMenu);
   };
+  const handleOutsideClick = (event) => {
+    const path = event.path;
+
+    if (!path.includes(refMenu.current)) {
+      setActiveMobileMenu(false);
+    }
+  };
+  useEffect(() => {
+    document.body.addEventListener("click", handleOutsideClick);
+  }, []);
   return (
     <div className="header__top">
       <div className="container">
@@ -66,7 +77,7 @@ function HeaderTop() {
           </div>
         </div>
       </div>
-      <MobileMenu state={activeMobileMenu} />
+      <MobileMenu state={activeMobileMenu} ref={refMenu} />
       <div className="menu-mobile__linewrapper ">
         <ul className="menu__mobile-line">
           {items.map((item, index) => {
