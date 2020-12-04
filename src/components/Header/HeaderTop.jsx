@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 
 //img
 import logo from "../../img/logo.svg";
@@ -11,28 +11,36 @@ import heart from "../../img/heart.svg";
 import MobileMenu from "../MobileMenu/MobileMenu";
 //
 function HeaderTop() {
-  const refMenu = useRef();
   const items = ["Магазины", "Акции", "Доставка и оплата"];
   const [activeMobileMenu, setActiveMobileMenu] = useState(false);
   const handlerActiveMenu = () => {
     setActiveMobileMenu(!activeMobileMenu);
   };
-  const handleOutsideClick = (event) => {
-    const path = event.path;
 
-    if (!path.includes(refMenu.current)) {
+  if (activeMobileMenu) {
+    document.body.classList.add("hidden");
+  } else {
+    document.body.classList.remove("hidden");
+  }
+
+  let mediaQueryList = window.matchMedia("(min-width: 968px)");
+  function screenTest(e) {
+    if (e.matches) {
       setActiveMobileMenu(false);
     }
-  };
-  useEffect(() => {
-    document.body.addEventListener("click", handleOutsideClick);
-  }, []);
+  }
+
+  mediaQueryList.addListener(screenTest);
+
   return (
     <div className="header__top">
       <div className="container">
         <div className="header__top-content">
           <nav className="menu">
-            <button className="menu__btn" onClick={handlerActiveMenu}>
+            <button
+              className={activeMobileMenu ? "menu__btn change" : "menu__btn "}
+              onClick={handlerActiveMenu}
+            >
               <div className="menu__btn-line"></div>
               <div className="menu__btn-line"></div>
               <div className="menu__btn-line"></div>
@@ -77,7 +85,7 @@ function HeaderTop() {
           </div>
         </div>
       </div>
-      <MobileMenu state={activeMobileMenu} ref={refMenu} />
+      <MobileMenu state={activeMobileMenu} setState={setActiveMobileMenu} />
       <div className="menu-mobile__linewrapper ">
         <ul className="menu__mobile-line">
           {items.map((item, index) => {

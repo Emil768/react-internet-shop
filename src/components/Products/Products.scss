@@ -106,8 +106,10 @@
 }
 
 @media (max-width: 968px) {
-  .products.page-section {
-    margin-top: 0;
+  .products {
+    .page-section {
+      margin-top: 0;
+    }
   }
   .tabs-wrapper {
     overflow-x: scroll;

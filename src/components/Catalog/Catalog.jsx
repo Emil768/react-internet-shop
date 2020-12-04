@@ -46,8 +46,6 @@ function Catalog({ name }) {
     setActiveFilter(!activeFilter);
   };
 
-  console.log(activeBtnGrid);
-
   return (
     <section className="catalog">
       <div className="container">

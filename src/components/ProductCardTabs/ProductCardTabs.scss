@@ -152,11 +152,16 @@
   }
 
   .card__list {
-    &-item {
-      display: block;
-    }
     &-itemtitle {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .card__list {
+    &-item {
+      display: block;
     }
   }
 }

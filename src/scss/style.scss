@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: "SFProDisplay-Regular", sans-serif;
   font-size: 20px;
@@ -15,6 +20,12 @@ body {
   color: #2f3035;
 
   min-width: 320px;
+  &.hidden {
+    overflow: hidden;
+  }
+  &.visible {
+    overflow: visible;
+  }
 }
 
 a {

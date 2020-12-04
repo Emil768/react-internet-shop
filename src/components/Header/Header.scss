@@ -17,12 +17,28 @@
         background-color: transparent;
         outline: none;
         border: none;
+        z-index: 2;
         cursor: pointer;
+        &.change {
+          .menu__btn-line:first-child {
+            -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+            transform: rotate(-45deg) translate(-6px, 6px);
+          }
+          .menu__btn-line:nth-child(2) {
+            opacity: 0;
+          }
+          .menu__btn-line:last-child {
+            -webkit-transform: rotate(45deg) translate(-11px, -11px);
+            transform: rotate(45deg) translate(-11px, -11px);
+          }
+        }
+
         &-line {
           background: #2f3035;
           border-radius: 3px;
           margin-bottom: 9px;
           height: 3px;
+          transition: 0.4s;
           &:last-child {
             margin-bottom: 0;
           }

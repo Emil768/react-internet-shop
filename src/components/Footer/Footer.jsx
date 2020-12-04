@@ -53,7 +53,7 @@ function Footer() {
                 {footerList.info.map((item, index) => {
                   return (
                     <li className="footer-list__item " key={index}>
-                      <a href="" className="footer-list__link">
+                      <a href="#/" className="footer-list__link">
                         {item}
                       </a>
                     </li>
@@ -77,7 +77,7 @@ function Footer() {
                 {footerList.shop.map((item, index) => {
                   return (
                     <li className="footer-list__item " key={index}>
-                      <a href="" className="footer-list__link">
+                      <a href="#/" className="footer-list__link">
                         {item}
                       </a>
                     </li>
@@ -90,7 +90,7 @@ function Footer() {
                 {footerList.social.map((img, index) => {
                   return (
                     <li className="social-list__item" key={index}>
-                      <a href="" className="social-list__link">
+                      <a href="#/" className="social-list__link">
                         <img src={img} alt="social-link" />
                       </a>
                     </li>
