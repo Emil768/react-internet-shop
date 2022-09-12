@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 //components
 import ProductCardInner from "../components/ProductCard/ProductCard";
 import ProductCardTabs from "../components/ProductCardTabs/ProductCardTabs";
